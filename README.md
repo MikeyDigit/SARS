@@ -9,6 +9,7 @@ The system allows the user to:
 - enter physical activities
 - enter mental/discipline activities
 - enter extracurricular activities
+- use a Gemini bridge / offline fallback to analyze extracurricular context
 - calculate a final score
 - rank students from highest to lowest
 - view a full score breakdown for each student
@@ -30,13 +31,20 @@ This project demonstrates:
 - sorting
 - menu-driven console design
 - AI-assisted scoring logic
+- Gemini API bridge design
 - safe project documentation for GitHub
 
 ## AI Use
 
-AI was used as a support tool for planning, debugging, explanation, and improving project structure. The project also includes an AI-style extracurricular keyword scoring system. The code still requires understanding of C++ logic, class design, data flow, and ranking algorithms.
+AI was used as a support tool for planning, debugging, explanation, and improving project structure. The project also includes an AI-style extracurricular keyword scoring system through `GeminiBridge.cpp` and `Club.cpp`.
 
-AI was not used as a replacement for learning. The goal was to use AI the same way a developer would use documentation, debugging help, or code review support.
+The public GitHub version does **not** hardcode an API key. To use the Gemini bridge, create a local `.env` or environment variable using `.env.example` as a guide:
+
+```text
+GEMINI_API_KEY=your_key_here
+```
+
+If no key is set, the project uses an offline keyword fallback so the program can still run safely.
 
 See `AI_USAGE.md` for the full AI-use explanation.
 
@@ -66,11 +74,21 @@ build/Debug/sars.exe
 ```text
 SARS/
 ├── src/
-│   └── SARS.cpp
+│   ├── AppMain.cpp
+│   ├── StudentRankingSystem.cpp / .h
+│   ├── Student.cpp / .h
+│   ├── DerivedStudents.cpp / .h
+│   ├── Physical.cpp / .h
+│   ├── MentalProfile.cpp / .h
+│   ├── ExtracurricularProfile.cpp / .h
+│   ├── Club.cpp / .h
+│   ├── GeminiBridge.cpp / .h
+│   └── InputUtils.cpp / .h
 ├── CMakeLists.txt
 ├── README.md
 ├── AI_USAGE.md
 ├── PROJECT_BREAKDOWN.md
+├── .env.example
 └── .gitignore
 ```
 
@@ -83,3 +101,5 @@ Final Score = Physical Score + Mental Score + Extracurricular Score
 ```
 
 Each student belongs to a category such as Engineering, Computer Science, or Life Science. The category affects how extracurricular activities are scored, which shows inheritance and polymorphism in action.
+
+The extracurricular score is supported by `Club` and `GeminiBridge`, where the program attempts to classify the context of extracurricular activities using Gemini. If Gemini is unavailable, an offline keyword fallback is used.
