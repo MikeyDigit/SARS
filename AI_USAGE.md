@@ -6,19 +6,16 @@ This project demonstrates the use of AI as a support tool while still maintainin
 
 AI was used in three main ways:
 
-1. **Planning and explanation**  
-   AI helped break the program into smaller parts, such as the student structure, ranking logic, scoring categories, and menu system.
-
-2. **Debugging support**  
+1. **Debugging support**  
    AI was used to help understand compiler errors, structure issues, and logic problems. The final code still had to be reviewed, tested, and understood by the developers.
 
-3. **AI-style scoring support**  
+2. **AI-style scoring support**  
    The extracurricular scoring system uses keyword-based logic to evaluate student activities differently depending on the student's category. This demonstrates how AI-style classification can support a ranking system while keeping the final logic inside C++.
 
 ## What AI Did Not Replace
 
 AI did not replace the need to understand the program. The project still required knowledge of:
-
+- how we broke the program into smaller parts, such as the student structure, ranking logic, scoring categories, and menu system.
 - how classes interact
 - how inheritance works
 - how vectors store students and activities
