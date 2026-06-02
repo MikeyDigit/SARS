@@ -4,13 +4,13 @@
 
 class MentalActivity {
 private:
-    std::string name;
+    std::string type;
     double hoursPerWeek;
     double disciplineScore;
 
 public:
-    MentalActivity(const std::string& n, double h, double d);
-    std::string getName() const;
+    MentalActivity(std::string t = "", double h = 0.0, double d = 0.0);
+    std::string getType() const;
     double getHoursPerWeek() const;
     double getDisciplineScore() const;
     double calculateScore() const;
@@ -21,7 +21,9 @@ private:
     std::vector<MentalActivity> activities;
 
 public:
-    void addActivity(const MentalActivity& activity);
+    bool hasType(const std::string& type) const;
+    bool addActivity(const MentalActivity& activity);
     double calculateScore() const;
+    const std::vector<MentalActivity>& getActivities() const;
     void display() const;
 };
