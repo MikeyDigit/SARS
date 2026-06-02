@@ -38,7 +38,7 @@ This project demonstrates:
 
 AI was used as a support tool for planning, debugging, explanation, and improving project structure. The project also includes an AI-style extracurricular keyword scoring system through `GeminiBridge.cpp` and `Club.cpp`.
 
-The public GitHub version does **not** hardcode an API key. To use the Gemini bridge, create a local `.env` or environment variable using `.env.example` as a guide:
+The public GitHub version does **not** hardcode an API key. To use the Gemini bridge, set an environment variable using `.env.example` as a guide:
 
 ```text
 GEMINI_API_KEY=your_key_here
