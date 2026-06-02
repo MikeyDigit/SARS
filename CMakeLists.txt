@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(sars
-    src/main.cpp
+    src/AppMain.cpp
     src/Club.cpp
     src/DerivedStudents.cpp
     src/ExtracurricularProfile.cpp
