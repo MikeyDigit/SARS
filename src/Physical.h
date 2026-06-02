@@ -1,17 +1,16 @@
 #pragma once
-
 #include <string>
 #include <vector>
 
 class PhysicalActivity {
 private:
-    std::string name;
+    std::string type;
     double hoursPerWeek;
     double intensity;
 
 public:
-    PhysicalActivity(const std::string& n, double h, double i);
-    std::string getName() const;
+    PhysicalActivity(std::string t = "", double h = 0.0, double i = 0.0);
+    std::string getType() const;
     double getHoursPerWeek() const;
     double getIntensity() const;
     double calculateScore() const;
@@ -22,7 +21,9 @@ private:
     std::vector<PhysicalActivity> activities;
 
 public:
-    void addActivity(const PhysicalActivity& activity);
+    bool hasType(const std::string& type) const;
+    bool addActivity(const PhysicalActivity& activity);
     double calculateScore() const;
+    const std::vector<PhysicalActivity>& getActivities() const;
     void display() const;
 };
