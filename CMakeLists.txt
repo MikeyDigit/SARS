@@ -7,5 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(sars
-    src/SARS.cpp
+    src/main.cpp
+    src/Club.cpp
+    src/DerivedStudents.cpp
+    src/ExtracurricularProfile.cpp
+    src/GeminiBridge.cpp
+    src/InputUtils.cpp
+    src/MentalProfile.cpp
+    src/Physical.cpp
+    src/Student.cpp
+    src/StudentRankingSystem.cpp
 )
