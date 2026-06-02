@@ -1,0 +1,32 @@
+# Build outputs
+build/
+out/
+x64/
+Debug/
+Release/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.log
+
+# Visual Studio generated files
+.vs/
+*.suo
+*.user
+*.VC.db
+*.vcxproj.FileListAbsolute.txt
+ipch/
+
+# Local environment/secrets
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
